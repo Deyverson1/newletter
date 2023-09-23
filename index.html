@@ -2,51 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/style/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <title>FM | Newsletter</title>
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-
-  <!-- Sign-up form start -->
-
-  Stay updated!
-
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
+  <section class="container">
+    <main class="principal">
+      <h1 class="tittle">Stay updated!</h1>
+      <p class="info">Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> Product discovery and building what matters</p></li>
+        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> Measuring to ensure updates are success</p></li>
+        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> And much more!</p></li>
+      </ul>
+      <form action="submit" class="form">
+        <label for="">Email address</label>
+        <input type="email" class="inp" placeholder="email@company.com">
+        <button id='switch' class="btn">Subscribe to monthly newsletter</button>
+      </form>
+      <div id="agradecimiento" class="agradecimiento">
+        <p>Gracias por su suscripción</p>
+      </div>
+    </main>
+    <div class="imgContainer">
+      <img class="image contenido" src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('.form');
+      const agradecimiento = document.getElementById('agradecimiento');
+      const contenido = document.querySelector('.contenido');
+      const switchButton = document.getElementById('switch');
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita el envío del formulario por defecto
+  
+        // Oculta todo el contenido, incluyendo el formulario y la imagen
+        contenido.style.display = 'none';
+  
+        // Muestra el mensaje de agradecimiento
+        agradecimiento.style.display = 'block';
+      });
+  
+      // Agregar un controlador de eventos al botón "switch" para regresar al formulario
+      switchButton.addEventListener('click', function () {
+        // Muestra todo el contenido nuevamente
+        contenido.style.display = 'block';
+  
+        // Oculta el mensaje de agradecimiento
+        agradecimiento.style.display = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
