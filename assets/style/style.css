@@ -1,0 +1,129 @@
+body {
+    background-color: hsl(234, 29%, 20%);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* font bold */
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+/* font regular */
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    border-radius: 2.5rem;
+    justify-content: center;
+    margin: 0rem 10rem;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.tittle {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    color: hsl(234, 29%, 20%);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.paragraphInfo {
+    display: flex;
+    align-items: center;
+}
+
+.paragraphInfo img {
+    margin-right: 10px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.inp {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid hsl(231, 7%, 60%);
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+}
+
+.inp::placeholder {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(231, 7%, 60%);
+}
+
+.inp:focus {
+    border: 1px solid red;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    background-color: hsl(234, 29%, 20%);
+    padding: 1rem;
+    font-size: 16px;
+    color: hsl(0, 0%, 100%);
+    margin-top: .5rem;
+}
+.btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, hsl(330, 100%, 65%), hsl(4, 100%, 67%));
+}
+
+.imgContainer {
+    display: flex;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    padding: 2rem;
+}
+
+/* ... Tu código CSS existente ... */
+
+.contenido {
+    display: flex;
+  }
+  
+  .agradecimiento {
+    display: none;
+  }
+  
+  
