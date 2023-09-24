@@ -22,9 +22,12 @@
           <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt="">Measuring to ensure updates are success</p></li>
           <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt="">And much more!</p></li>
         </ul>
-        <form action="" class="form">
+        <form action="submit" class="form" id="form">
           <label for="">Email address</label>
-          <input type="email" class="inp" placeholder="email@company.com" data-form-input>
+          <input 
+          error={email.valid === false}
+          helperText={email.valid === false}
+          type="email" class="inp" placeholder="email@company.com" data-form-input >
           <button id='switch' class="btn" data-form-btn>Subscribe to monthly newsletter</button>
         </form>
       </main>
@@ -42,7 +45,6 @@
       <button class="btn btn2" data-form-success>Dismiss message</button>
     </div>
   </section>
-
   <script type="module" src="/assets/logic/index.js"></script>
 </body>
 </html>
