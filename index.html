@@ -13,53 +13,36 @@
 </head>
 <body>
   <section class="container">
-    <main class="principal">
-      <h1 class="tittle">Stay updated!</h1>
-      <p class="info">Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul>
-        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> Product discovery and building what matters</p></li>
-        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> Measuring to ensure updates are success</p></li>
-        <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt=""> And much more!</p></li>
-      </ul>
-      <form action="submit" class="form">
-        <label for="">Email address</label>
-        <input type="email" class="inp" placeholder="email@company.com">
-        <button id='switch' class="btn">Subscribe to monthly newsletter</button>
-      </form>
-      <div id="agradecimiento" class="agradecimiento">
-        <p>Gracias por su suscripción</p>
+    <section class=" contentHide">
+      <main class="principal contentHide">
+        <h1 class="tittle">Stay updated!</h1>
+        <p class="info">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt="">Product discovery and building what matters</p></li>
+          <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt="">Measuring to ensure updates are success</p></li>
+          <li> <p class="paragraphInfo"> <img src="/assets/images/icon-list.svg" alt="">And much more!</p></li>
+        </ul>
+        <form action="" class="form">
+          <label for="">Email address</label>
+          <input type="email" class="inp" placeholder="email@company.com" data-form-input>
+          <button id='switch' class="btn" data-form-btn>Subscribe to monthly newsletter</button>
+        </form>
+      </main>
+      <div class="imgContainer">
+        <picture src="">
+          <source srcset="../assets/images/illustration-sign-up-mobile.svg" media="(max-width:376px)">
+          <img class="image" src="/assets/images/illustration-sign-up-desktop.svg">
+          </picture>
       </div>
-    </main>
-    <div class="imgContainer">
-      <img class="image contenido" src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+    </section>
+    <div id="newParagraph" class=" newParagraph paragraph">
+      <img class="imgThanks" style="width: 50px;" src="/assets/images/icon-success.svg" alt="img success">
+      <h2 class="tittleSuccess info">Thanks for subscribing!</h2>
+      <p class="paragraphSub">A confirmation email has been sent to <span id="newParagraphJs"></span>. Please open it and click the button inside to confirm your subscription.</p>
+      <button class="btn btn2" data-form-success>Dismiss message</button>
     </div>
   </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('.form');
-      const agradecimiento = document.getElementById('agradecimiento');
-      const contenido = document.querySelector('.contenido');
-      const switchButton = document.getElementById('switch');
-  
-      form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita el envío del formulario por defecto
-  
-        // Oculta todo el contenido, incluyendo el formulario y la imagen
-        contenido.style.display = 'none';
-  
-        // Muestra el mensaje de agradecimiento
-        agradecimiento.style.display = 'block';
-      });
-  
-      // Agregar un controlador de eventos al botón "switch" para regresar al formulario
-      switchButton.addEventListener('click', function () {
-        // Muestra todo el contenido nuevamente
-        contenido.style.display = 'block';
-  
-        // Oculta el mensaje de agradecimiento
-        agradecimiento.style.display = 'none';
-      });
-    });
-  </script>
+
+  <script type="module" src="/assets/logic/index.js"></script>
 </body>
 </html>

@@ -1,26 +1,47 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.form');
-    const agradecimiento = document.getElementById('agradecimiento');
-    const contenidoCompleto = document.getElementById('contenidoCompleto');
-    const switchButton = document.getElementById('switch');
-  
-    form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Evita el envío del formulario por defecto
-  
-      // Oculta todo el contenido (incluyendo el formulario)
-      contenidoCompleto.style.display = 'none';
-  
-      // Muestra el mensaje de agradecimiento
-      agradecimiento.style.display = 'block';
-    });
-  
-    // Agregar un controlador de eventos al botón "switch" para regresar al formulario
-    switchButton.addEventListener('click', function () {
-      // Muestra todo el contenido nuevamente
-      contenidoCompleto.style.display = 'block';
-  
-      // Oculta el mensaje de agradecimiento
-      agradecimiento.style.display = 'none';
-    });
-  });
-  
+
+// New content to show when the email has been sent it
+const newParagraph = document.getElementById('newParagraph');
+// propriety to hide the element with that class called contentHide in the html code
+const contentHide = document.querySelector('.contentHide');
+// hide image
+const imgHide = document.querySelectorAll('.image')
+// Button to listen event 
+const switchButton = document.querySelector('[data-form-btn]')
+const widthContainer = document.querySelector('.container')
+// button success
+const buttonSuccess = document.querySelector('[data-form-success]');
+// console.log(switchButton);
+const emailClient = document.getElementById('newParagraphJs')
+
+const widthWindow = window.innerWidth;
+console.log(widthWindow)
+switchButton.addEventListener('click', function (e) {
+    // const btn = switchButton;
+    e.preventDefault();
+    const input = document.querySelector('[data-form-input]')
+    const valueInput = input.value;
+    contentHide.style.display = 'none';
+    newParagraph.style.display = 'flex';
+    // imgHide.style.display = 'none'
+    if(widthWindow > 376){
+        widthContainer.style.margin = "5rem 26rem";
+    }else{
+        widthContainer.style.margin = "0rem";
+    }
+    
+    console.log(valueInput)
+    emailClient.textContent = valueInput;
+});
+
+buttonSuccess.addEventListener('click', function (e,) {
+    e.preventDefault();
+    contentHide.style.display = 'flex';
+    newParagraph.style.display = 'none';
+    if(widthWindow > 376){
+        widthContainer.style.margin = "0rem 10rem"
+    }else{
+        widthContainer.style.margin = "0rem";
+        widthContainer.style.marginTop = "-1rem";
+    }
+    
+})

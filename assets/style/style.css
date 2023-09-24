@@ -26,6 +26,10 @@ body {
     margin: 0rem 10rem;
 }
 
+.contentHide {
+    display: flex;
+}
+
 .principal {
     display: flex;
     flex-direction: column;
@@ -44,15 +48,6 @@ body {
     margin-top: 0;
 }
 
-.paragraphInfo {
-    display: flex;
-    align-items: center;
-}
-
-.paragraphInfo img {
-    margin-right: 10px;
-}
-
 ul {
     padding: 0;
     margin: 0;
@@ -60,6 +55,15 @@ ul {
 
 li {
     list-style: none;
+}
+
+.paragraphInfo {
+    display: flex;
+    align-items: center;
+}
+
+.paragraphInfo img {
+    margin-right: 10px;
 }
 
 .form {
@@ -101,6 +105,7 @@ label {
     color: hsl(0, 0%, 100%);
     margin-top: .5rem;
 }
+
 .btn:hover {
     cursor: pointer;
     background: linear-gradient(to right, hsl(330, 100%, 65%), hsl(4, 100%, 67%));
@@ -112,18 +117,88 @@ label {
 }
 
 .image {
-    width: 100%;
+    width: auto;
     padding: 2rem;
+
 }
 
-/* ... Tu código CSS existente ... */
-
-.contenido {
-    display: flex;
-  }
-  
-  .agradecimiento {
+.newParagraph {
     display: none;
-  }
-  
-  
+    /* margin: 15rem; */
+}
+
+.paragraph {
+    display: none;
+    flex-direction: column;
+    padding: 4rem;
+}
+
+.imgThanks {
+    width: auto;
+    padding-bottom: 2rem;
+}
+
+.tittleSuccess {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    color: hsl(234, 29%, 20%);
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 2rem;
+}
+
+.paragraphSub {
+    /* margin: 0; */
+    font-weight: 200;
+
+}
+
+#newParagraphJs {
+    /* margin: 0; */
+    /* padding: 0; */
+    font-weight: bold;
+}
+
+.btn2 {
+    margin-top: 2rem;
+}
+
+/* mobile version, only 375px recommended*/
+@media screen and (max-width:375px){
+    body{
+        background-color: hsl(0, 0%, 100%);;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        width: auto;
+        height: auto;
+        margin-bottom: -1rem;
+        margin-top: -1rem;
+        border-radius: 0;
+    }
+    .contentHide{
+        flex-wrap: wrap-reverse;
+        width: 100%;
+    }
+    .principal{
+        width: 100%;
+        padding-left: 0;
+    }
+    .tittle{
+        font-size: 40px;
+    }
+    .image{
+        padding: 0;
+        margin: 0;
+    }
+    .paragraph{
+        padding: 0;
+        padding-top: 7rem;
+    }
+    .paragraphSub{
+        padding-bottom: 9rem;
+    }
+
+}
