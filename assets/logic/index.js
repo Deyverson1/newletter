@@ -1,4 +1,3 @@
-
 // New content to show when the email has been sent it
 const newParagraph = document.getElementById('newParagraph');
 // propriety to hide the element with that class called contentHide in the html code
@@ -22,14 +21,13 @@ switchButton.addEventListener('click', function (e) {
     const valueInput = input.value;
     contentHide.style.display = 'none';
     newParagraph.style.display = 'flex';
-    // imgHide.style.display = 'none'
+    handleForm();
     if(widthWindow > 376){
         widthContainer.style.margin = "5rem 26rem";
     }else{
         widthContainer.style.margin = "0rem";
     }
-    
-    console.log(valueInput)
+    // console.log(valueInput)
     emailClient.textContent = valueInput;
 });
 
@@ -45,3 +43,17 @@ buttonSuccess.addEventListener('click', function (e,) {
     }
     
 })
+
+// validations 
+const form = document.querySelector('#form')
+
+const handleForm = e => {
+    // e.preventDefault()
+    const input = document.querySelector('[data-form-input]')
+    const email = input.value;
+    if (email.length > 8 && email.includes('@')){
+        console.log(email, 'content valid')
+    } else {
+        alert("Bad")
+    }
+}
